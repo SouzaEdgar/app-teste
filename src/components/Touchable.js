@@ -2,30 +2,47 @@
 
 import React, {useState} from 'react'
 import {View, Text, StyleSheet, TouchableHighlight} from 'react-native'
+import * as Contador from '../utils/Contador.js'
 
 export default function() {
 
-    const [cont, setCont]=useState(0)
-
-    const girar = function () {
-        if (cont >= 360) return setCont(0)
-        else setCont(cont + 90)
+    const [cont, setCont] = useState(0);
+    const girar=()=> {
+        if (cont >= 360) {
+            setCont(0)
+        } else {
+            setCont(cont + 90)
+        }
     }
-
     return (
-        <View>
+        <View style={estilos.container}>
+            <Text style={estilos.texto}>{cont}°</Text>
             <TouchableHighlight style={estilos.botao} onPress={girar}>
-                <Text>GIRAR</Text>
+                <Text style={estilos.textoBotao}>GIRAR</Text>
             </TouchableHighlight>
-            <Text>{cont}°</Text>
         </View>
     );
 }
 
 const estilos = StyleSheet.create({
-    botao: {
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
         alignItems: 'center',
-        backgroundColor: 'grey',
+    },
+    botao: {
         padding: 15,
+        width: 105, //120,
+        height: 105,//'auto',
+        borderRadius: 50,
+        backgroundColor: 'grey',
+    },
+    textoBotao: {
+        fontSize: 25,
+        marginTop: 15,
+    },
+    texto: {
+        alignSelf: 'center',
+        fontSize: 120,
     }
 })
