@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Button, Alert} from 'react-native';
 import Toque from './src/components/Touchable.js';
-import Contador from './src/utils/Contador.js'
+import Angle from './src/components/Angle.js'
 
 export default function App() {
   return (
@@ -9,8 +9,7 @@ export default function App() {
       <StatusBar style="auto" />
 
       <Text><Toque/></Text>
-      <Image style={{width: 40, height: 30,position: 'absolute', justifyContent: 'center'}} source={{uri:'https://cdn.discordapp.com/attachments/718876217293537333/1104539057998012496/image.png'}}/>
-      {/* <Button title='GIRAR' onPress={}/> */}
+      <Image style={{width: 40, height: 30,position: 'absolute', justifyContent: 'center', transform: [{rotate: `45deg`}]}} source={{uri:'https://cdn.discordapp.com/attachments/718876217293537333/1104539057998012496/image.png'}}/>
     </View>
   );
 }

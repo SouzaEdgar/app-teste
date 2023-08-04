@@ -2,18 +2,19 @@
 
 import React, {useState} from 'react'
 import {View, Text, StyleSheet, TouchableHighlight} from 'react-native'
-import * as Contador from '../utils/Contador.js'
+import Angle from './Angle.js'
 
 export default function() {
-
+// Valor ° (graus)
     const [cont, setCont] = useState(0);
     const girar=()=> {
         if (cont >= 360) {
             setCont(0)
         } else {
             setCont(cont + 90)
-        }
+        };
     }
+
     return (
         <View style={estilos.container}>
             <Text style={estilos.texto}>{cont}°</Text>
