@@ -1,15 +1,16 @@
+import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Button, Alert} from 'react-native';
 import Toque from './src/components/Touchable.js';
 import Angle from './src/components/Angle.js'
 
 export default function App() {
+  const VALOR = 0;
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
 
       <Text><Toque/></Text>
-      <Image style={{width: 40, height: 30,position: 'absolute', justifyContent: 'center', transform: [{rotate: `45deg`}]}} source={{uri:'https://cdn.discordapp.com/attachments/718876217293537333/1104539057998012496/image.png'}}/>
     </View>
   );
 }

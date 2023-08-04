@@ -1,7 +1,7 @@
 // Alternativa para o botão padrão, visto que o mesmo possui algumas diferenças entre a sua configuração (estilo) de Android e iOS
 
 import React, {useState} from 'react'
-import {View, Text, StyleSheet, TouchableHighlight} from 'react-native'
+import {View, Text, StyleSheet, TouchableHighlight, Image} from 'react-native'
 import Angle from './Angle.js'
 
 export default function() {
@@ -18,6 +18,7 @@ export default function() {
     return (
         <View style={estilos.container}>
             <Text style={estilos.texto}>{cont}°</Text>
+            <Image style={{width: 40, height: 30,position: 'absolute', justifyContent: 'center', transform: [{rotate: `${cont}deg`}]}} source={{uri:'https://cdn.discordapp.com/attachments/718876217293537333/1104539057998012496/image.png'}}/>
             <TouchableHighlight style={estilos.botao} onPress={girar}>
                 <Text style={estilos.textoBotao}>GIRAR</Text>
             </TouchableHighlight>
