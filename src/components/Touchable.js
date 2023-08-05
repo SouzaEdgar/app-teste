@@ -9,7 +9,7 @@ export default function() {
     const [cont, setCont] = useState(0);
     const girar=()=> {
         if (cont >= 360) {
-            setCont(0)
+            setCont(90)
         } else {
             setCont(cont + 90)
         };
@@ -18,7 +18,7 @@ export default function() {
     return (
         <View style={estilos.container}>
             <Text style={estilos.texto}>{cont}°</Text>
-            <Image style={{width: 40, height: 30,position: 'absolute', justifyContent: 'center', transform: [{rotate: `${cont}deg`}]}} source={{uri:'https://cdn.discordapp.com/attachments/718876217293537333/1104539057998012496/image.png'}}/>
+            <Image style={{width: 300, height: 300, position: 'relative', justifyContent: 'center', transform: [{rotate: `${cont}deg`}]}} source={{uri:'https://cdn.discordapp.com/attachments/718876217293537333/1104539057998012496/image.png'}}/>
             <TouchableHighlight style={estilos.botao} onPress={girar}>
                 <Text style={estilos.textoBotao}>GIRAR</Text>
             </TouchableHighlight>
@@ -38,6 +38,7 @@ const estilos = StyleSheet.create({
         height: 105,//'auto',
         borderRadius: 50,
         backgroundColor: 'grey',
+        position: 'relative'
     },
     textoBotao: {
         fontSize: 25,
@@ -46,5 +47,6 @@ const estilos = StyleSheet.create({
     texto: {
         alignSelf: 'center',
         fontSize: 120,
+        position: 'relative'
     }
 })
