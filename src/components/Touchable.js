@@ -18,7 +18,7 @@ export default function() {
     return (
         <View style={estilos.container}>
             <Text style={estilos.texto}>{cont}°</Text>
-            <Image style={{width: 300, height: 300, position: 'relative', justifyContent: 'center', transform: [{rotate: `${cont}deg`}]}} source={{uri:'https://cdn.discordapp.com/attachments/718876217293537333/1104539057998012496/image.png'}}/>
+            <Image style={{width: 310, height: 310, borderRadius: 20, alignSelf: 'center', position: 'relative', transform: [{rotate: `${cont}deg`}]}} source={{uri:'https://cdn.discordapp.com/attachments/718876217293537333/1104539057998012496/image.png'}}/>
             <TouchableHighlight style={estilos.botao} onPress={girar}>
                 <Text style={estilos.textoBotao}>GIRAR</Text>
             </TouchableHighlight>
@@ -29,8 +29,11 @@ export default function() {
 const estilos = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
+        backgroundColor: '#1F1F1F',
+        // alignItems: 'center',
+        margin: 0, 
+        padding: 0, 
+        boxSizing: 'border-box',
     },
     botao: {
         padding: 15,
@@ -38,15 +41,19 @@ const estilos = StyleSheet.create({
         height: 105,//'auto',
         borderRadius: 50,
         backgroundColor: 'grey',
-        position: 'relative'
+        position: 'relative',
+        marginTop: 70,
+        alignSelf: 'center',
     },
     textoBotao: {
         fontSize: 25,
-        marginTop: 15,
+        //marginTop: 20,
+        marginVertical: '20%'
     },
     texto: {
         alignSelf: 'center',
         fontSize: 120,
-        position: 'relative'
+        position: 'relative',
+        //backgroundColor: 'green'
     }
 })
