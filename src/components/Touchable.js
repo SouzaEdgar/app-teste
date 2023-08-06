@@ -28,12 +28,13 @@ export default function() {
 
 const estilos = StyleSheet.create({
     container: {
-        flex: 1,
+        flex: 100,
         backgroundColor: '#1F1F1F',
         // alignItems: 'center',
-        margin: 0, 
-        padding: 0, 
+        margin:0 , 
+        paddingTop: 100, 
         boxSizing: 'border-box',
+
     },
     botao: {
         padding: 15,
@@ -42,18 +43,24 @@ const estilos = StyleSheet.create({
         borderRadius: 50,
         backgroundColor: 'grey',
         position: 'relative',
-        marginTop: 70,
+        marginTop: 120,
         alignSelf: 'center',
+        shadowRadius:50 ,
     },
     textoBotao: {
         fontSize: 25,
         //marginTop: 20,
-        marginVertical: '20%'
+        marginVertical: '20%',
+        alignSelf: 'center',
+        marginTop: 18,
     },
     texto: {
         alignSelf: 'center',
         fontSize: 120,
         position: 'relative',
+        paddingBottom: 40,
+        marginTop: -30,
+        marginBottom: 10,
         //backgroundColor: 'green'
     }
-})
+}) 
