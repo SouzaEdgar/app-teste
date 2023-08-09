@@ -16,9 +16,12 @@ export default function() {
     }
 
     return (
-        <View style={estilos.container}>
-            <Text style={estilos.texto}>{cont}°</Text>
-            <Image style={{width: 300, height: 300, position: 'relative', justifyContent: 'center', transform: [{rotate: `${cont}deg`}]}} source={{uri:'https://cdn.discordapp.com/attachments/718876217293537333/1104539057998012496/image.png'}}/>
+        <View style={[estilos.caixa, {flexDirection: 'column'}]}>
+            <View style={[estilos.graus, {flexDirection: 'row'}]}>
+                <Text style={estilos.texto}>{cont}</Text>
+                <Text style={estilos.texto}>°</Text>
+            </View>
+            <Image style={{width: 310, height: 310, borderRadius: 20, alignSelf: 'center', position: 'relative', transform: [{rotate: `${cont}deg`}]}} source={{uri:'https://cdn.discordapp.com/attachments/718876217293537333/1104539057998012496/image.png'}}/>
             <TouchableHighlight style={estilos.botao} onPress={girar}>
                 <Text style={estilos.textoBotao}>GIRAR</Text>
             </TouchableHighlight>
@@ -27,26 +30,38 @@ export default function() {
 }
 
 const estilos = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
+    caixa: {
+        //flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'space-evenly',
+        gap: 8,
+        backgroundColor: '#A9A9A9',
+        height: '100%',
+        width: '100%',
+    },
+    grau: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#D3D3D3'
     },
     botao: {
-        padding: 15,
-        width: 105, //120,
-        height: 105,//'auto',
-        borderRadius: 50,
+        width: 120, //120,
+        height: 'auto',//'auto',
+        borderRadius: 20,
         backgroundColor: 'grey',
-        position: 'relative'
+        //position: 'relative',
+        //alignSelf: 'center',
+        //shadowRadius:50 ,
     },
     textoBotao: {
         fontSize: 25,
-        marginTop: 15,
+        margin: '20%',
+        //marginTop: 20,
+        //marginVertical: '20%',
+        //alignSelf: 'center',
     },
     texto: {
-        alignSelf: 'center',
         fontSize: 120,
-        position: 'relative'
+        position: 'relative',
     }
-})
+}) 
