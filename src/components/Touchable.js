@@ -34,29 +34,33 @@ const aleatorio = () => {
     }
 
     return (
-        <View style={[estilos.caixa, {flexDirection: 'column'}]}>
-            <View style={[estilos.graus, {flexDirection: 'row'}]}>
-                <Text style={estilos.texto}>{cont}</Text>
-                <Text style={estilos.texto}>°</Text>
+        <View>
+            <View style={[estilos.caixa, {flexDirection: 'column'}]}>
+                <View style={[estilos.graus, {flexDirection: 'row'}]}>
+                    <Text style={estilos.texto}>{cont}</Text>
+                    <Text style={estilos.texto}>°</Text>
+                </View>
+                <View>
+                    <Image style={{
+                        width: 310, 
+                        height: 310, 
+                        borderRadius: 20,
+                        transform: [{rotate: `${cont}deg`}]
+                    }}
+                        source={{uri:'https://cdn.discordapp.com/attachments/718876217293537333/1104539057998012496/image.png'}}/>
+                    <View style={[estilos.pelicula, {
+                        flexDirection: 'column',
+                        width: 310, 
+                        height: 310, 
+                        borderRadius: 20,
+                        backgroundColor: `rgba(${nRed},${nGreen},${nBlue}, 0.455)`
+                    }]}/>
+                </View>
+                
+                <TouchableHighlight style={estilos.botao} onPress={girar}>
+                    <Text style={estilos.textoBotao}>GIRAR</Text>
+                </TouchableHighlight>
             </View>
-            <View style={[estilos.pelicula, {
-                width: 310, 
-                height: 310, 
-                borderRadius: 20,
-                backgroundColor: `rgba(${nRed},${nGreen},${nBlue}, 0.455)`
-            }]}/>
-            <Image style={{
-                width: 310, 
-                height: 310, 
-                borderRadius: 20,
-                transform: [{rotate: `${cont}deg`}]
-            }}
-                source={{uri:'https://cdn.discordapp.com/attachments/718876217293537333/1104539057998012496/image.png'}}/>
-            
-            
-            <TouchableHighlight style={estilos.botao} onPress={girar}>
-                <Text style={estilos.textoBotao}>GIRAR</Text>
-            </TouchableHighlight>
         </View>
     );
 }
@@ -64,7 +68,7 @@ const aleatorio = () => {
 const estilos = StyleSheet.create({
     caixa: {
         alignItems: 'center',
-        justifyContent: 'space-evenly',
+        justifyContent: 'center',
         gap: 8,
         backgroundColor: '#A9A9A9',
         height: '100%',
@@ -73,12 +77,13 @@ const estilos = StyleSheet.create({
     grau: {
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#D3D3D3'
+        backgroundColor: '#D3D3D3',
     },
     pelicula: {
         zIndex: 2,
+        justifyContent: 'center',
         position: 'absolute',
-        top: '34.5%',
+        alignItems: 'center',
     },
     botao: {
         width: 120,
